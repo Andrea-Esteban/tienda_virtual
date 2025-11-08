@@ -1,0 +1,14 @@
+{% load static %}
+<h1>Tienda Virtual</h1>
+
+{% for producto in productos %}
+<div style="border: 1px solid #ddd; padding: 10px; margin: 10px">
+  <h2>{{ producto.nombre }}</h2>
+  <p>{{ producto.descripcion }}</p>
+  <p><b>S/ {{ producto.precio }}</b></p>
+  {% if producto.imagen %}
+  <img src="{{ producto.imagen.url }}" width="200" />
+  {% endif %}
+  <button>Agregar al carrito 🛒</button>
+</div>
+{% endfor %}
